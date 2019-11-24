@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/SixtMixed/static/css/main.7e579839.chunk.css",
+    "main.js": "/SixtMixed/static/js/main.4359aa05.chunk.js",
+    "main.js.map": "/SixtMixed/static/js/main.4359aa05.chunk.js.map",
+    "runtime-main.js": "/SixtMixed/static/js/runtime-main.d6621ef9.js",
+    "runtime-main.js.map": "/SixtMixed/static/js/runtime-main.d6621ef9.js.map",
+    "static/js/2.dbc4a316.chunk.js": "/SixtMixed/static/js/2.dbc4a316.chunk.js",
+    "static/js/2.dbc4a316.chunk.js.map": "/SixtMixed/static/js/2.dbc4a316.chunk.js.map",
+    "index.html": "/SixtMixed/index.html",
+    "precache-manifest.d4e2d019646f07632d26ff17a615a9c7.js": "/SixtMixed/precache-manifest.d4e2d019646f07632d26ff17a615a9c7.js",
+    "service-worker.js": "/SixtMixed/service-worker.js",
+    "static/css/main.7e579839.chunk.css.map": "/SixtMixed/static/css/main.7e579839.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d6621ef9.js",
+    "static/js/2.dbc4a316.chunk.js",
+    "static/css/main.7e579839.chunk.css",
+    "static/js/main.4359aa05.chunk.js"
+  ]
+}
