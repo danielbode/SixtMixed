@@ -17,11 +17,20 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# python shit
-/__pycache__
-venv
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Claude Code
+.claude/
+
+# Office temp/lock files (~$ prefix = file is currently open in Office)
+~$*
