@@ -1,19 +1,16 @@
 {
-  "name": "frontend",
+  "name": "sixt-mixed",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.7.0",
-    "@material-ui/icons": "^4.5.1",
-    "rc-here-maps": "^1.1.8",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+"react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-geolocated": "^3.0.1",
-    "react-leaflet": "^2.6.0",
-    "react-modal": "^3.11.1",
-    "react-router": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "react-swipeable-views": "^0.13.3"
+    "react-modal": "^3.16.1",
+    "react-scripts": "5.0.1",
+    "react-swipeable-views": "^0.14.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +20,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "resolutions": {
+    "@babel/runtime": "^7.21.0"
   },
   "browserslist": {
     "production": [
