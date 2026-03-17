@@ -6,6 +6,7 @@ import DetailsWithIcons from './detailsWithIcons';
 import Icon from '@material-ui/core/Icon';
 import Map from './map';
 import { timeToString, timeInMinutes } from '../../utils';
+import { BRAND_COLOR } from '../../constants';
 
 function EventOverview({
     // the event we are trying to attend
@@ -27,7 +28,6 @@ function EventOverview({
 
     const [useSixtMixed, setUseSixtMixed ] = React.useState(false);
     const timeToLeave = timeInMinutes(startTime - new Date());
-    // const timeToLeave = timeInMinutes(startTime - new Date());
     const arrivedTimeBeforeEvent = timeInMinutes(event.startTime - endTime);
     const isLate = arrivedTimeBeforeEvent < 0;
 
@@ -39,11 +39,16 @@ function EventOverview({
 
     return (
         <div className="EventOverview-Container">
-            <Map
-                useSixtMixed={useSixtMixed}
-                startLocation={startLocationCoordinate}
-                endLocation={destinationCoordinate}
-            />
+            <div
+                onTouchStart={e => e.stopPropagation()}
+                onMouseDown={e => e.stopPropagation()}
+                style={{ display: 'contents' }}
+            >
+                <Map
+                    startLocation={startLocationCoordinate}
+                    endLocation={destinationCoordinate}
+                />
+            </div>
 
             <div className="EventOverview-Row EventOverview-Separator">
                 <CommuteLogo />
@@ -61,8 +66,8 @@ function EventOverview({
                             label="Type"
                             highlightValue={isMixedToGo}
                             value={typeText} />
-                    <SmallDescription 
-                        label="Time to leave" 
+                    <SmallDescription
+                        label="Time to leave"
                         value={`${timeToLeave} Mins`} />
                 </div>
             </div>
@@ -76,7 +81,7 @@ function EventOverview({
                 />
                 <DetailsWithIcons
                     iconName="directions_run"
-                    style={isLate ? {color: '#ff5f00'}: {color: 'white'}}
+                    style={isLate ? {color: BRAND_COLOR} : {color: 'white'}}
                     value={
                         isLate?
                         `${-arrivedTimeBeforeEvent} mins late`:"On time"
@@ -101,7 +106,7 @@ function EventOverview({
                 ):(
                     <div style={{ paddingLeft: 24}}
                         className="eventOverview-Row EventOverview-SixtMixedRow">
-                        You are riding with <p style={{paddingLeft: 4, color: '#ff5f00'}}>Alice</p>
+                        You are riding with <p style={{paddingLeft: 4, color: BRAND_COLOR}}>Alice</p>
                     </div>
                 )
             }

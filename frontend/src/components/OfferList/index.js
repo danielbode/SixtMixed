@@ -4,7 +4,7 @@ import SwipeableViews from 'react-swipeable-views';
 import Button from '../Button/index';
 import './style.css';
 
-export default function({ event, offers, onOrder }) {
+export default function OfferList({ event, offers, onOrder }) {
     const [ viewsIndex, setViewsIndex ] = React.useState(0)
     return (
         <div className="OfferList">
@@ -25,7 +25,7 @@ export default function({ event, offers, onOrder }) {
                 }}
                 className="OfferList-SwipeViews">
                 {
-                    offers.map(evt => (<EventOverview event={event} {...evt} />))
+                    offers.map((evt, i) => (<EventOverview key={i} event={event} {...evt} />))
                 }
                 
             </SwipeableViews>

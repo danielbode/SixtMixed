@@ -1,5 +1,4 @@
-import React from 'react'
-import { range } from 'lodash';
+import React from 'react';
 import { hourToString } from '../utils';
 
 const defaultEvent = {
@@ -14,12 +13,10 @@ export default function NextEvent({event: nextEvent = defaultEvent }) {
         startTime: startTimeComplete, endTime: endTimeComplete,
         title, location
     } = nextEvent;
-    const startingTime = startTimeComplete.getHours();
-    const endTime = endTimeComplete.getHours();
-    const minutes = startTimeComplete.getMinutes();
-
-    const duration = endTime - startingTime;
-    const timeSlots = range(startingTime - 1, endTime + 1);
+    const startingHour = startTimeComplete.getHours();
+    const durationHours = Math.round((endTimeComplete - startTimeComplete) / (60 * 60 * 1000));
+    const duration = durationHours;
+    const timeSlots = Array.from({length: durationHours + 2}, (_, i) => (startingHour - 1 + i + 24) % 24);
 
     return(
         <div className="NextEvent-Container">
@@ -29,7 +26,7 @@ export default function NextEvent({event: nextEvent = defaultEvent }) {
                     {
                         timeSlots.map(ts => (
                             <div className="top-border" key={ts}>
-                                {hourToString(ts, minutes)}
+                                {hourToString(ts)}
                             </div>
                         ))
                     }

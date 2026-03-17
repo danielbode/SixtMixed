@@ -31,7 +31,7 @@ export default function NavBar() {
     return (
         <div className="App-NavBar">
             {
-                iconData.map(NavIcon)
+                iconData.map((item) => <NavIcon key={item.name} {...item} />)
             }
         </div>
     )
